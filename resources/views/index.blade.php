@@ -20,12 +20,12 @@
 </div>
 
 <!-- Global LogViewer Object -->
-<script>
+<script nonce="<?php echo e(csp_nonce()); ?>">
     window.LogViewer = @json($logViewerScriptVariables);
 
     // Add additional headers for LogViewer requests like so:
     // window.LogViewer.headers['Authorization'] = 'Bearer xxxxxxx';
 </script>
-<script src="{{ asset(mix('app.js', 'vendor/log-viewer')) }}" onerror="alert('app.js failed to load. Please refresh the page, re-publish Log Viewer assets, or fix routing for vendor assets.')"></script>
+<script nonce="<?php echo e(csp_nonce()); ?>" src="{{ asset(mix('app.js', 'vendor/log-viewer')) }}" onerror="alert('app.js failed to load. Please refresh the page, re-publish Log Viewer assets, or fix routing for vendor assets.')"></script>
 </body>
 </html>
